@@ -7,11 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarolineMarriage", "Carolin
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Shared", "Shared\Shared.shproj", "{B9709C4C-53FC-4AB8-8FA2-8BCD5961F89A}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "SharedPatching", "..\SharedPatching\SharedPatching.shproj", "{82685E71-194F-450E-ADB2-7849B71EF3F1}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "SharedPatching", "SharedPatching\SharedPatching.shproj", "{82685E71-194F-450E-ADB2-7849B71EF3F1}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		..\SharedPatching\SharedPatching.projitems*{82685e71-194f-450e-adb2-7849b71ef3f1}*SharedItemsImports = 13
+		SharedPatching\SharedPatching.projitems*{82685e71-194f-450e-adb2-7849b71ef3f1}*SharedItemsImports = 13
 		Shared\Shared.projitems*{b9709c4c-53fc-4ab8-8fa2-8bcd5961f89a}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
