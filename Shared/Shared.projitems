@@ -10,7 +10,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)APIs\IContentPatcherApi.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)APIs\IJsonAssetsApi.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ConsoleCommands\ConsoleCommandHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ConsoleCommands\IConsoleCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DiagnosticMessages.cs" />

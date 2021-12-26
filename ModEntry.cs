@@ -1,5 +1,8 @@
 ﻿using System.Collections;
+using System.IO;
 using CarolineMarriage.Framework;
+using Shared;
+using Shared.APIs;
 using Shared.ConsoleCommands;
 using SharedPatching;
 using StardewModdingAPI;
@@ -48,14 +51,6 @@ namespace CarolineMarriage
         {
             // get Wear More Rings API if present
             //this.WearMoreRings = this.Helper.ModRegistry.GetApi<IWearMoreRingsApi>("bcmpinc.WearMoreRings");
-
-            //// register rings with Json Assets
-            //this.JsonAssets = this.Helper.ModRegistry.GetApi<IJsonAssetsApi>("spacechase0.JsonAssets");
-
-            //if (this.JsonAssets != null)
-            //    this.JsonAssets.LoadAssets(Path.Combine(this.Helper.DirectoryPath, "assets", "json-assets"));
-            //else
-            //    Log.Error("Couldn't get the Json Assets API, so the Demolition Set won't be available.");
         }
 
         /// <summary>The event called when the game updates (roughly sixty times per second).</summary>
