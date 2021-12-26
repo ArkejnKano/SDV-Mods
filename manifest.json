@@ -1,0 +1,10 @@
+{
+  "Name": "Caroline Marriage",
+  "Author": "ArkejnKano",
+  "Version": "1.0.0",
+  "MinimumApiVersion": "3.13.0",
+  "Description": "Marry Caroline",
+  "UniqueID": "ArkejnKano.CarolineMarriage",
+  "EntryDll": "CarolineMarriage.dll",
+  "UpdateKeys": [ "Nexus:10439" ]
+}
