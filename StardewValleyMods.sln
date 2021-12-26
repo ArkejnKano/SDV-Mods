@@ -13,6 +13,8 @@ Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		SharedPatching\SharedPatching.projitems*{82685e71-194f-450e-adb2-7849b71ef3f1}*SharedItemsImports = 13
 		Shared\Shared.projitems*{b9709c4c-53fc-4ab8-8fa2-8bcd5961f89a}*SharedItemsImports = 13
+		SharedPatching\SharedPatching.projitems*{d58ee7a4-e97b-4a68-92ed-3fadc58e797a}*SharedItemsImports = 5
+		Shared\Shared.projitems*{d58ee7a4-e97b-4a68-92ed-3fadc58e797a}*SharedItemsImports = 5
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

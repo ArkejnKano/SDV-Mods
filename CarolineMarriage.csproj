@@ -2,10 +2,24 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <EnableHarmony>true</EnableHarmony>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="SharedPatching\**" />
+    <Compile Remove="Shared\**" />
+    <EmbeddedResource Remove="SharedPatching\**" />
+    <EmbeddedResource Remove="Shared\**" />
+    <None Remove="SharedPatching\**" />
+    <None Remove="Shared\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.0.0" />
   </ItemGroup>
+
+  <Import Project="Shared\Shared.projitems" Label="Shared" />
+
+  <Import Project="SharedPatching\SharedPatching.projitems" Label="Shared" />
 
 </Project>

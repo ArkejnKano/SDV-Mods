@@ -1,55 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System;
+using HarmonyLib;
+using StardewModdingAPI;
 
 namespace SharedPatching
 {
-    internal class Class1
-    {using System.Diagnostics.CodeAnalysis;
-
-    namespace CarolineMarriage.Framework
+    /// <summary>Simplifies applying <see cref="IPatcher"/> instances to the game.</summary>
+    internal static class HarmonyPatcher
     {
-        /// <summary>The mod configuration model.</summary>
-        [SuppressMessage("ReSharper", "InconsistentNaming", Justification = "Deliberately named to simplify readability for players editing the config file.")]
-        internal class ModConfig
+        /*********
+        ** Public methods
+        *********/
+        /// <summary>Apply the given Harmony patchers.</summary>
+        /// <param name="mod">The mod applying the patchers.</param>
+        /// <param name="patchers">The patchers to apply.</param>
+        public static Harmony Apply(Mod mod, params IPatcher[] patchers)
         {
-            
-        }
-    }
-    using System;
-    using HarmonyLib;
-    using StardewModdingAPI;
+            Harmony harmony = new(mod.ModManifest.UniqueID);
 
-    namespace SharedPatching
-    {
-        /// <summary>Simplifies applying <see cref="IPatcher"/> instances to the game.</summary>
-        internal static class HarmonyPatcher
-        {
-            /**
-             Public methods
-            **/
-            /// <summary>Apply the given Harmony patchers.</summary>
-            /// <param name="mod">The mod applying the patchers.</param>
-            /// <param name="patchers">The patchers to apply.</param>
-            public static Harmony Apply(Mod mod, params IPatcher[] patchers)
+            foreach (IPatcher patcher in patchers)
             {
-                Harmony harmony = new(mod.ModManifest.UniqueID);
-
-                foreach (IPatcher patcher in patchers)
+                try
                 {
-                    try
-                    {
-                        patcher.Apply(harmony, mod.Monitor);
-                    }
-                    catch (Exception ex)
-                    {
-                        mod.Monitor.Log($"Failed to apply '{patcher.GetType().FullName}' patcher; some features may not work correctly. Technical details:\n{ex}", LogLevel.Error);
-                    }
+                    patcher.Apply(harmony, mod.Monitor);
                 }
-
-                return harmony;
+                catch (Exception ex)
+                {
+                    mod.Monitor.Log($"Failed to apply '{patcher.GetType().FullName}' patcher; some features may not work correctly. Technical details:\n{ex}", LogLevel.Error);
+                }
             }
+
+            return harmony;
         }
     }
-}
 }
